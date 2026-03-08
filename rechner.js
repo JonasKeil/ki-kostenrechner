@@ -18,9 +18,9 @@ const FALLBACK_MODELLE = [
   { name: "GPT-5",               anbieter: "OpenAI",    input_pro_1m_token:  1.25, output_pro_1m_token:  10.00, kontext_fenster: "400k",  intelligence_score: null, stand: "2026-03" },
   { name: "Claude Opus 4.6",     anbieter: "Anthropic", input_pro_1m_token:  5.00, output_pro_1m_token:  25.00, kontext_fenster: "1M",    intelligence_score: 53,   stand: "2026-03" },
   { name: "Claude Sonnet 4.6",   anbieter: "Anthropic", input_pro_1m_token:  3.00, output_pro_1m_token:  15.00, kontext_fenster: "1M",    intelligence_score: 52,   stand: "2026-03" },
-  { name: "Claude Haiku 4.5",    anbieter: "Anthropic", input_pro_1m_token:  1.00, output_pro_1m_token:   5.00, kontext_fenster: "200k",  intelligence_score: null, stand: "2026-03" },
+  { name: "Claude Haiku 4.5",    anbieter: "Anthropic", input_pro_1m_token:  1.00, output_pro_1m_token:   5.00, kontext_fenster: "200k",  intelligence_score: 37,   stand: "2026-03" },
   { name: "Gemini 3.1 Pro",      anbieter: "Google",    input_pro_1m_token:  2.00, output_pro_1m_token:  12.00, kontext_fenster: "200k",  intelligence_score: 57,   stand: "2026-03" },
-  { name: "Gemini 3.1 Flash-Lite",anbieter: "Google",   input_pro_1m_token:  0.25, output_pro_1m_token:   1.50, kontext_fenster: "1M",    intelligence_score: null, stand: "2026-03" }
+  { name: "Gemini 3.1 Flash-Lite",anbieter: "Google",   input_pro_1m_token:  0.25, output_pro_1m_token:   1.50, kontext_fenster: "1M",    intelligence_score: 34,   stand: "2026-03" }
 ];
 
 // ── State ──────────────────────────────────────────────────────────────────────
@@ -125,7 +125,13 @@ function aktualisiereTabelle() {
     return { modell, taeglich, monatlich: taeglich * 30, jaehrlich: taeglich * 365 };
   });
 
-  ergebnisse.sort(function(a, b) { return a.taeglich - b.taeglich; });
+  const anbieterRang = { 'OpenAI': 0, 'Anthropic': 1, 'Google': 2 };
+  ergebnisse.sort(function(a, b) {
+    const rangA = anbieterRang[a.modell.anbieter] ?? 99;
+    const rangB = anbieterRang[b.modell.anbieter] ?? 99;
+    if (rangA !== rangB) return rangA - rangB;
+    return b.modell.intelligence_score - a.modell.intelligence_score;
+  });
 
   while (tbody.firstChild) tbody.removeChild(tbody.firstChild);
 
