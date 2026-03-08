@@ -374,6 +374,11 @@ footer p {
   font-size: 0.95rem;
 }
 
+/* ── UTILITY ─────────────────────────────────────────── */
+.hidden {
+  display: none !important;
+}
+
 /* ── INPUT GROUPS (button-based) ─────────────────────── */
 .input-group {
   display: flex;

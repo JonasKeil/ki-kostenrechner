@@ -11,7 +11,6 @@
 </head>
 <body>
 
-  <!-- ── HEADER ───────────────────────────────────────────────────── -->
   <header>
     <div class="header-inner">
       <div class="header-brand">
@@ -25,81 +24,134 @@
     </div>
   </header>
 
-  <!-- ── MAIN ─────────────────────────────────────────────────────── -->
   <main>
-
     <div class="inputs-card">
       <h2>Deine Parameter</h2>
 
-      <!-- Anfragen pro Tag -->
+      <!-- ── Use Case (immer ganz oben) ── -->
       <div class="input-group">
-        <label>Anfragen pro Tag</label>
-        <div class="option-group" id="group-anfragen" role="group" aria-label="Anfragen pro Tag">
-          <button class="option-btn" data-value="3">
-            <span class="opt-main">Sehr wenig</span>
-            <span class="opt-sub">&lt;&nbsp;5&nbsp;/&nbsp;Tag</span>
-          </button>
-          <button class="option-btn" data-value="12">
-            <span class="opt-main">Wenig</span>
-            <span class="opt-sub">5–20&nbsp;/&nbsp;Tag</span>
-          </button>
-          <button class="option-btn active" data-value="35">
-            <span class="opt-main">Normal</span>
-            <span class="opt-sub">20–50&nbsp;/&nbsp;Tag</span>
-          </button>
-          <button class="option-btn" data-value="75">
-            <span class="opt-main">Viel</span>
-            <span class="opt-sub">50–100&nbsp;/&nbsp;Tag</span>
-          </button>
-          <button class="option-btn" data-value="200">
-            <span class="opt-main">Sehr viel</span>
-            <span class="opt-sub">200+&nbsp;/&nbsp;Tag</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- Länge der Anfrage -->
-      <div class="input-group">
-        <label>L&auml;nge der Anfrage</label>
-        <div class="option-group" id="group-laenge" role="group" aria-label="Länge der Anfrage">
-          <button class="option-btn" data-value="50">
-            <span class="opt-main">Sehr kurz</span>
-            <span class="opt-sub">~50 W&ouml;rter</span>
-          </button>
-          <button class="option-btn" data-value="150">
-            <span class="opt-main">Kurz</span>
-            <span class="opt-sub">~150 W&ouml;rter</span>
-          </button>
-          <button class="option-btn active" data-value="300">
-            <span class="opt-main">Mittel</span>
-            <span class="opt-sub">~300 W&ouml;rter</span>
-          </button>
-          <button class="option-btn" data-value="600">
-            <span class="opt-main">Lang</span>
-            <span class="opt-sub">~600 W&ouml;rter</span>
-          </button>
-          <button class="option-btn" data-value="1200">
-            <span class="opt-main">Sehr lang</span>
-            <span class="opt-sub">~1.200 W&ouml;rter</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- Use Case -->
-      <div class="input-group">
-        <label>Use Case</label>
-        <div class="use-case-toggle" role="group" aria-label="Use Case">
+        <label>Was m&ouml;chtest du tun?</label>
+        <div class="use-case-toggle" id="use-case-toggle" role="group" aria-label="Use Case">
           <button class="use-case-btn active" data-case="fragen">
             <span class="uc-icon">&#x1F4AC;</span>
             <span>Fragen &amp; Antworten</span>
           </button>
           <button class="use-case-btn" data-case="programmieren">
             <span class="uc-icon">&#x1F4BB;</span>
-            <span>Programmieren</span>
+            <span>Programmieren mit KI</span>
           </button>
         </div>
-        <p class="use-case-hint" id="use-case-hint">Konversationell &mdash; Antwort ca. 2&times; so lang wie Anfrage</p>
       </div>
+
+      <!-- ── Parameter: Fragen & Antworten ── -->
+      <div id="inputs-fragen">
+        <div class="input-group">
+          <label>Anfragen pro Tag</label>
+          <div class="option-group" id="group-anfragen" role="group" aria-label="Anfragen pro Tag">
+            <button class="option-btn" data-value="3">
+              <span class="opt-main">Sehr wenig</span>
+              <span class="opt-sub">&lt;&nbsp;5&nbsp;/&nbsp;Tag</span>
+            </button>
+            <button class="option-btn" data-value="12">
+              <span class="opt-main">Wenig</span>
+              <span class="opt-sub">5–20&nbsp;/&nbsp;Tag</span>
+            </button>
+            <button class="option-btn active" data-value="35">
+              <span class="opt-main">Normal</span>
+              <span class="opt-sub">20–50&nbsp;/&nbsp;Tag</span>
+            </button>
+            <button class="option-btn" data-value="75">
+              <span class="opt-main">Viel</span>
+              <span class="opt-sub">50–100&nbsp;/&nbsp;Tag</span>
+            </button>
+            <button class="option-btn" data-value="200">
+              <span class="opt-main">Sehr viel</span>
+              <span class="opt-sub">200+&nbsp;/&nbsp;Tag</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label>L&auml;nge der Anfrage</label>
+          <div class="option-group" id="group-laenge" role="group" aria-label="Länge der Anfrage">
+            <button class="option-btn" data-value="50">
+              <span class="opt-main">Sehr kurz</span>
+              <span class="opt-sub">~50 W&ouml;rter</span>
+            </button>
+            <button class="option-btn" data-value="150">
+              <span class="opt-main">Kurz</span>
+              <span class="opt-sub">~150 W&ouml;rter</span>
+            </button>
+            <button class="option-btn active" data-value="300">
+              <span class="opt-main">Mittel</span>
+              <span class="opt-sub">~300 W&ouml;rter</span>
+            </button>
+            <button class="option-btn" data-value="600">
+              <span class="opt-main">Lang</span>
+              <span class="opt-sub">~600 W&ouml;rter</span>
+            </button>
+            <button class="option-btn" data-value="1200">
+              <span class="opt-main">Sehr lang</span>
+              <span class="opt-sub">~1.200 W&ouml;rter</span>
+            </button>
+          </div>
+        </div>
+      </div><!-- /#inputs-fragen -->
+
+      <!-- ── Parameter: Programmieren ── -->
+      <div id="inputs-programmieren" class="hidden">
+        <div class="input-group">
+          <label>Gr&ouml;&szlig;e der Codebase</label>
+          <div class="option-group" id="group-codebase" role="group" aria-label="Größe der Codebase">
+            <button class="option-btn" data-value="2000">
+              <span class="opt-main">Mini</span>
+              <span class="opt-sub">Script&nbsp;/&nbsp;~2k&nbsp;Tokens</span>
+            </button>
+            <button class="option-btn" data-value="8000">
+              <span class="opt-main">Klein</span>
+              <span class="opt-sub">Kleines Projekt&nbsp;/&nbsp;~8k</span>
+            </button>
+            <button class="option-btn active" data-value="25000">
+              <span class="opt-main">Mittel</span>
+              <span class="opt-sub">Mittleres Projekt&nbsp;/&nbsp;~25k</span>
+            </button>
+            <button class="option-btn" data-value="80000">
+              <span class="opt-main">Gro&szlig;</span>
+              <span class="opt-sub">Gro&szlig;es Projekt&nbsp;/&nbsp;~80k</span>
+            </button>
+            <button class="option-btn" data-value="200000">
+              <span class="opt-main">Enterprise</span>
+              <span class="opt-sub">Komplexe&nbsp;App&nbsp;/&nbsp;~200k</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label>KI-Intensit&auml;t (Anfragen&nbsp;/&nbsp;Tag)</label>
+          <div class="option-group" id="group-intensitaet" role="group" aria-label="KI-Intensität">
+            <button class="option-btn" data-value="3">
+              <span class="opt-main">Gelegentlich</span>
+              <span class="opt-sub">~3&nbsp;/&nbsp;Tag</span>
+            </button>
+            <button class="option-btn" data-value="10">
+              <span class="opt-main">Regelm&auml;&szlig;ig</span>
+              <span class="opt-sub">~10&nbsp;/&nbsp;Tag</span>
+            </button>
+            <button class="option-btn active" data-value="30">
+              <span class="opt-main">T&auml;glich</span>
+              <span class="opt-sub">~30&nbsp;/&nbsp;Tag</span>
+            </button>
+            <button class="option-btn" data-value="80">
+              <span class="opt-main">Intensiv</span>
+              <span class="opt-sub">~80&nbsp;/&nbsp;Tag</span>
+            </button>
+            <button class="option-btn" data-value="200">
+              <span class="opt-main">Vollzeit-KI</span>
+              <span class="opt-sub">200+&nbsp;/&nbsp;Tag</span>
+            </button>
+          </div>
+        </div>
+      </div><!-- /#inputs-programmieren -->
 
     </div><!-- /.inputs-card -->
 
@@ -131,7 +183,6 @@
 
   </main>
 
-  <!-- ── FOOTER ────────────────────────────────────────────────────── -->
   <footer>
     <p>Preise ohne Gew&auml;hr, Stand: M&auml;rz 2026</p>
     <a

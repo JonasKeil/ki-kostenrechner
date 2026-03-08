@@ -1,5 +1,15 @@
 [
   {
+    "name": "GPT-5.4 Pro",
+    "anbieter": "OpenAI",
+    "input_pro_1m_token": 30.00,
+    "output_pro_1m_token": 180.00,
+    "kontext_fenster": "1M",
+    "staerken": "Maximum Reasoning, komplexes Coding",
+    "intelligence_score": 57,
+    "stand": "2026-03"
+  },
+  {
     "name": "GPT-5.4",
     "anbieter": "OpenAI",
     "input_pro_1m_token": 2.50,
@@ -40,6 +50,16 @@
     "stand": "2026-03"
   },
   {
+    "name": "Claude Haiku 4.5",
+    "anbieter": "Anthropic",
+    "input_pro_1m_token": 1.00,
+    "output_pro_1m_token": 5.00,
+    "kontext_fenster": "200k",
+    "staerken": "Schnell, hohe Anfragevolumen",
+    "intelligence_score": null,
+    "stand": "2026-03"
+  },
+  {
     "name": "Gemini 3.1 Pro",
     "anbieter": "Google",
     "input_pro_1m_token": 2.00,
@@ -50,12 +70,12 @@
     "stand": "2026-03"
   },
   {
-    "name": "Gemini 2.5 Flash",
+    "name": "Gemini 3.1 Flash-Lite",
     "anbieter": "Google",
-    "input_pro_1m_token": 0.15,
-    "output_pro_1m_token": 0.60,
+    "input_pro_1m_token": 0.25,
+    "output_pro_1m_token": 1.50,
     "kontext_fenster": "1M",
-    "staerken": "Bestes Preis-Leistungs-Verhältnis",
+    "staerken": "2,5× schneller als Flash, günstigste Option",
     "intelligence_score": null,
     "stand": "2026-03"
   }
