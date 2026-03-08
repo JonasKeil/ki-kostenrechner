@@ -5,7 +5,7 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src 'self' data:; font-src 'self'; frame-ancestors 'none';">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Vergleiche die API-Kosten von GPT-4o, Claude, Gemini und weiteren KI-Modellen interaktiv. Kostenloser Rechner von Jonas Keil." />
+  <meta name="description" content="Vergleiche die API-Kosten von GPT-5.4, Claude Opus 4.6, Gemini 3.1 und weiteren KI-Modellen interaktiv." />
   <title>KI-Kostenrechner – Jonas Keil</title>
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -28,81 +28,79 @@
   <!-- ── MAIN ─────────────────────────────────────────────────────── -->
   <main>
 
-    <!-- Eingaben -->
     <div class="inputs-card">
       <h2>Deine Parameter</h2>
-      <div class="inputs-grid">
 
-        <!-- Anfragen pro Tag -->
-        <div class="input-group">
-          <label for="slider-anfragen">Anfragen pro Tag</label>
-          <div class="input-row">
-            <input
-              type="range"
-              id="slider-anfragen"
-              min="1"
-              max="200"
-              value="20"
-              aria-label="Anfragen pro Tag"
-            />
-            <input
-              type="number"
-              id="num-anfragen"
-              min="1"
-              max="200"
-              value="20"
-              aria-label="Anfragen pro Tag (Zahl)"
-            />
-          </div>
+      <!-- Anfragen pro Tag -->
+      <div class="input-group">
+        <label>Anfragen pro Tag</label>
+        <div class="option-group" id="group-anfragen" role="group" aria-label="Anfragen pro Tag">
+          <button class="option-btn" data-value="3">
+            <span class="opt-main">Sehr wenig</span>
+            <span class="opt-sub">&lt;&nbsp;5&nbsp;/&nbsp;Tag</span>
+          </button>
+          <button class="option-btn" data-value="12">
+            <span class="opt-main">Wenig</span>
+            <span class="opt-sub">5–20&nbsp;/&nbsp;Tag</span>
+          </button>
+          <button class="option-btn active" data-value="35">
+            <span class="opt-main">Normal</span>
+            <span class="opt-sub">20–50&nbsp;/&nbsp;Tag</span>
+          </button>
+          <button class="option-btn" data-value="75">
+            <span class="opt-main">Viel</span>
+            <span class="opt-sub">50–100&nbsp;/&nbsp;Tag</span>
+          </button>
+          <button class="option-btn" data-value="200">
+            <span class="opt-main">Sehr viel</span>
+            <span class="opt-sub">200+&nbsp;/&nbsp;Tag</span>
+          </button>
         </div>
+      </div>
 
-        <!-- Woerter pro Anfrage -->
-        <div class="input-group">
-          <label for="slider-woerter-anfrage">W&ouml;rter pro Anfrage</label>
-          <div class="input-row">
-            <input
-              type="range"
-              id="slider-woerter-anfrage"
-              min="10"
-              max="2000"
-              value="200"
-              aria-label="Woerter pro Anfrage"
-            />
-            <input
-              type="number"
-              id="num-woerter-anfrage"
-              min="10"
-              max="2000"
-              value="200"
-              aria-label="Woerter pro Anfrage (Zahl)"
-            />
-          </div>
+      <!-- Länge der Anfrage -->
+      <div class="input-group">
+        <label>L&auml;nge der Anfrage</label>
+        <div class="option-group" id="group-laenge" role="group" aria-label="Länge der Anfrage">
+          <button class="option-btn" data-value="50">
+            <span class="opt-main">Sehr kurz</span>
+            <span class="opt-sub">~50 W&ouml;rter</span>
+          </button>
+          <button class="option-btn" data-value="150">
+            <span class="opt-main">Kurz</span>
+            <span class="opt-sub">~150 W&ouml;rter</span>
+          </button>
+          <button class="option-btn active" data-value="300">
+            <span class="opt-main">Mittel</span>
+            <span class="opt-sub">~300 W&ouml;rter</span>
+          </button>
+          <button class="option-btn" data-value="600">
+            <span class="opt-main">Lang</span>
+            <span class="opt-sub">~600 W&ouml;rter</span>
+          </button>
+          <button class="option-btn" data-value="1200">
+            <span class="opt-main">Sehr lang</span>
+            <span class="opt-sub">~1.200 W&ouml;rter</span>
+          </button>
         </div>
+      </div>
 
-        <!-- Woerter pro Antwort -->
-        <div class="input-group">
-          <label for="slider-woerter-antwort">W&ouml;rter pro Antwort</label>
-          <div class="input-row">
-            <input
-              type="range"
-              id="slider-woerter-antwort"
-              min="10"
-              max="2000"
-              value="300"
-              aria-label="Woerter pro Antwort"
-            />
-            <input
-              type="number"
-              id="num-woerter-antwort"
-              min="10"
-              max="2000"
-              value="300"
-              aria-label="Woerter pro Antwort (Zahl)"
-            />
-          </div>
+      <!-- Use Case -->
+      <div class="input-group">
+        <label>Use Case</label>
+        <div class="use-case-toggle" role="group" aria-label="Use Case">
+          <button class="use-case-btn active" data-case="fragen">
+            <span class="uc-icon">&#x1F4AC;</span>
+            <span>Fragen &amp; Antworten</span>
+          </button>
+          <button class="use-case-btn" data-case="programmieren">
+            <span class="uc-icon">&#x1F4BB;</span>
+            <span>Programmieren</span>
+          </button>
         </div>
+        <p class="use-case-hint" id="use-case-hint">Konversationell &mdash; Antwort ca. 2&times; so lang wie Anfrage</p>
+      </div>
 
-      </div><!-- /.inputs-grid -->
     </div><!-- /.inputs-card -->
 
     <!-- Ergebnistabelle -->
@@ -114,11 +112,11 @@
             <tr>
               <th class="col-modell">Modell</th>
               <th class="col-anbieter">Anbieter</th>
+              <th class="col-score">Intelligenz*</th>
               <th>Kosten&nbsp;/&nbsp;Tag</th>
               <th>Kosten&nbsp;/&nbsp;Monat</th>
               <th>Kosten&nbsp;/&nbsp;Jahr</th>
               <th class="col-kontext">Kontext</th>
-              <th class="col-staerken">St&auml;rken</th>
             </tr>
           </thead>
           <tbody id="ergebnis-tbody">
@@ -128,7 +126,8 @@
           </tbody>
         </table>
       </div>
-    </div><!-- /.results-section -->
+      <p class="score-source">* Intelligenz-Score: <a href="https://artificialanalysis.ai/models" target="_blank" rel="noopener noreferrer">Artificial Analysis Intelligence Index</a> &mdash; &ldquo;&ndash;&rdquo; = noch nicht indexiert</p>
+    </div>
 
   </main>
 
@@ -137,7 +136,7 @@
     <p>Preise ohne Gew&auml;hr, Stand: M&auml;rz 2026</p>
     <a
       class="btn-report"
-      href="https://github.com/Jonas-Keil/ki-kostenrechner/issues/new"
+      href="https://github.com/JonasKeil/ki-kostenrechner/issues/new"
       target="_blank"
       rel="noopener noreferrer"
     >

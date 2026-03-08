@@ -374,6 +374,194 @@ footer p {
   font-size: 0.95rem;
 }
 
+/* ── INPUT GROUPS (button-based) ─────────────────────── */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.input-group:last-child {
+  margin-bottom: 0;
+}
+
+.input-group > label {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--gray-600);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ── OPTION BUTTON GROUP ─────────────────────────────── */
+.option-group {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.option-btn {
+  flex: 1;
+  min-width: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0.6rem 0.5rem;
+  border: 2px solid var(--gray-200);
+  border-radius: var(--radius-sm);
+  background: var(--white);
+  color: var(--gray-600);
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s, color 0.15s, transform 0.1s;
+  line-height: 1.3;
+}
+
+.option-btn:hover {
+  border-color: var(--blue);
+  background: var(--blue-light);
+  color: var(--blue-dark);
+}
+
+.option-btn.active {
+  border-color: var(--blue);
+  background: var(--blue);
+  color: var(--white);
+}
+
+.option-btn:active {
+  transform: scale(0.97);
+}
+
+.opt-main {
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.opt-sub {
+  font-size: 0.74rem;
+  opacity: 0.8;
+}
+
+.option-btn.active .opt-sub {
+  opacity: 0.85;
+}
+
+/* ── USE CASE TOGGLE ─────────────────────────────────── */
+.use-case-toggle {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.use-case-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--gray-200);
+  border-radius: var(--radius-sm);
+  background: var(--white);
+  color: var(--gray-600);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s, color 0.15s;
+}
+
+.use-case-btn:hover {
+  border-color: var(--blue);
+  background: var(--blue-light);
+  color: var(--blue-dark);
+}
+
+.use-case-btn.active {
+  border-color: var(--blue);
+  background: var(--blue);
+  color: var(--white);
+}
+
+.uc-icon {
+  font-size: 1.1rem;
+}
+
+.use-case-hint {
+  font-size: 0.8rem;
+  color: var(--gray-400);
+  font-style: italic;
+  margin-top: 0.1rem;
+}
+
+/* ── INTELLIGENCE SCORE CELL ─────────────────────────── */
+.col-score {
+  text-align: center !important;
+  min-width: 90px;
+}
+
+thead th.col-score {
+  text-align: center;
+}
+
+.score-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.score-num {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--blue);
+  line-height: 1;
+}
+
+.score-bar-bg {
+  width: 52px;
+  height: 5px;
+  background: var(--gray-200);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.score-bar-fill {
+  height: 100%;
+  background: var(--blue);
+  border-radius: 3px;
+  transition: width 0.4s ease;
+}
+
+.score-na {
+  color: var(--gray-400);
+  font-size: 1rem;
+}
+
+tbody tr.cheapest .score-num {
+  color: var(--green-text);
+}
+
+tbody tr.cheapest .score-bar-fill {
+  background: #059669;
+}
+
+/* ── SCORE SOURCE NOTE ───────────────────────────────── */
+.score-source {
+  margin-top: 0.75rem;
+  font-size: 0.78rem;
+  color: var(--gray-400);
+}
+
+.score-source a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+.score-source a:hover {
+  text-decoration: underline;
+}
+
 /* ── RESPONSIVE ──────────────────────────────────────── */
 @media (max-width: 600px) {
   .inputs-card {
@@ -388,7 +576,21 @@ footer p {
     padding: 1.25rem 0.75rem 2rem;
   }
 
-  input[type="number"] {
-    width: 62px;
+  .option-btn {
+    min-width: 70px;
+    padding: 0.5rem 0.3rem;
+  }
+
+  .opt-main {
+    font-size: 0.8rem;
+  }
+
+  .opt-sub {
+    font-size: 0.68rem;
+  }
+
+  .use-case-btn {
+    font-size: 0.82rem;
+    padding: 0.6rem 0.5rem;
   }
 }
