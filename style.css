@@ -1,0 +1,394 @@
+/* KI-Kostenrechner – Jonas Keil Brand Styles */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --blue: #1E6FD9;
+  --blue-dark: #1558b0;
+  --blue-light: #e8f0fc;
+  --orange: #F5A623;
+  --white: #FFFFFF;
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-400: #9ca3af;
+  --gray-600: #4b5563;
+  --gray-800: #1f2937;
+  --green-bg: #d1fae5;
+  --green-text: #065f46;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.10), 0 2px 4px rgba(0,0,0,0.06);
+  --radius: 12px;
+  --radius-sm: 8px;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--gray-50);
+  color: var(--gray-800);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* ── HEADER ─────────────────────────────────────────── */
+header {
+  background: var(--blue);
+  color: var(--white);
+  padding: 2rem 1rem 2.5rem;
+  text-align: center;
+}
+
+.header-inner {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.brand-dot {
+  width: 10px;
+  height: 10px;
+  background: var(--orange);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.header-brand a {
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.header-brand a:hover {
+  color: var(--white);
+}
+
+header h1 {
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  font-size: 1.05rem;
+  opacity: 0.88;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* ── MAIN LAYOUT ─────────────────────────────────────── */
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1rem 3rem;
+}
+
+/* ── INPUTS CARD ─────────────────────────────────────── */
+.inputs-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  padding: 1.75rem 2rem;
+  margin-bottom: 2rem;
+}
+
+.inputs-card h2 {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--blue);
+  margin-bottom: 1.5rem;
+}
+
+.inputs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem 2rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.input-group label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--gray-600);
+}
+
+.input-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  flex: 1;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--gray-200);
+  outline: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--blue);
+  cursor: pointer;
+  border: 3px solid var(--white);
+  box-shadow: 0 0 0 2px var(--blue);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 0 3px var(--blue-light), 0 0 0 5px var(--blue);
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--blue);
+  cursor: pointer;
+  border: 3px solid var(--white);
+  box-shadow: 0 0 0 2px var(--blue);
+}
+
+input[type="number"] {
+  width: 72px;
+  padding: 0.35rem 0.5rem;
+  border: 2px solid var(--gray-200);
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--gray-800);
+  text-align: center;
+  transition: border-color 0.2s;
+  -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  opacity: 0.5;
+}
+
+input[type="number"]:focus {
+  outline: none;
+  border-color: var(--blue);
+}
+
+/* ── RESULTS SECTION ─────────────────────────────────── */
+.results-section h2 {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--blue);
+  margin-bottom: 1rem;
+}
+
+.table-wrapper {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 640px;
+}
+
+thead {
+  background: var(--blue);
+  color: var(--white);
+}
+
+thead th {
+  padding: 0.85rem 1rem;
+  text-align: left;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+thead th:not(:first-child) {
+  text-align: right;
+}
+
+thead th.col-modell,
+thead th.col-anbieter,
+thead th.col-kontext,
+thead th.col-staerken {
+  text-align: left;
+}
+
+tbody tr {
+  border-bottom: 1px solid var(--gray-100);
+  transition: background 0.15s;
+}
+
+tbody tr:nth-child(even) {
+  background: var(--gray-50);
+}
+
+tbody tr:hover {
+  background: var(--blue-light);
+}
+
+tbody tr:last-child {
+  border-bottom: none;
+}
+
+tbody td {
+  padding: 0.85rem 1rem;
+  font-size: 0.9rem;
+  vertical-align: middle;
+}
+
+tbody td:not(:first-child):not(.col-anbieter):not(.col-kontext):not(.col-staerken) {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+}
+
+.col-modell {
+  font-weight: 700;
+  color: var(--gray-800);
+}
+
+.col-anbieter {
+  color: var(--gray-600);
+  font-size: 0.85rem;
+}
+
+.col-kontext {
+  font-size: 0.85rem;
+  color: var(--gray-600);
+  white-space: nowrap;
+}
+
+.col-staerken {
+  font-size: 0.82rem;
+  color: var(--gray-600);
+  max-width: 160px;
+}
+
+/* ── CHEAPEST HIGHLIGHT ──────────────────────────────── */
+tbody tr.cheapest {
+  background: var(--green-bg) !important;
+}
+
+tbody tr.cheapest td {
+  color: var(--green-text);
+}
+
+tbody tr.cheapest .col-modell {
+  color: var(--green-text);
+}
+
+tbody tr.cheapest .col-modell::after {
+  content: " Günstigster";
+  display: inline-block;
+  margin-left: 0.4em;
+  background: #059669;
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.1em 0.45em;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  vertical-align: middle;
+}
+
+/* ── FOOTER ──────────────────────────────────────────── */
+footer {
+  margin-top: 3rem;
+  text-align: center;
+  color: var(--gray-400);
+  font-size: 0.85rem;
+  padding: 0 1rem 2rem;
+}
+
+footer p {
+  margin-bottom: 0.75rem;
+}
+
+.btn-report {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--white);
+  color: var(--blue);
+  border: 2px solid var(--blue);
+  border-radius: 999px;
+  padding: 0.5rem 1.2rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn-report:hover {
+  background: var(--blue);
+  color: var(--white);
+}
+
+/* ── LOADING / ERROR STATE ───────────────────────────── */
+.state-msg {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--gray-400);
+  font-size: 0.95rem;
+}
+
+/* ── RESPONSIVE ──────────────────────────────────────── */
+@media (max-width: 600px) {
+  .inputs-card {
+    padding: 1.25rem 1rem;
+  }
+
+  header {
+    padding: 1.5rem 1rem 2rem;
+  }
+
+  main {
+    padding: 1.25rem 0.75rem 2rem;
+  }
+
+  input[type="number"] {
+    width: 62px;
+  }
+}

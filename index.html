@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src 'self' data:; font-src 'self'; frame-ancestors 'none';">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Vergleiche die API-Kosten von GPT-4o, Claude, Gemini und weiteren KI-Modellen interaktiv. Kostenloser Rechner von Jonas Keil." />
+  <title>KI-Kostenrechner – Jonas Keil</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── HEADER ───────────────────────────────────────────────────── -->
+  <header>
+    <div class="header-inner">
+      <div class="header-brand">
+        <span class="brand-dot"></span>
+        <a href="https://www.youtube.com/@JonasKeil" target="_blank" rel="noopener noreferrer">
+          Jonas Keil – KI-Trainer &amp; YouTuber
+        </a>
+      </div>
+      <h1>KI-Kostenrechner</h1>
+      <p>Finde das g&uuml;nstigste KI-Modell f&uuml;r deine Bed&uuml;rfnisse</p>
+    </div>
+  </header>
+
+  <!-- ── MAIN ─────────────────────────────────────────────────────── -->
+  <main>
+
+    <!-- Eingaben -->
+    <div class="inputs-card">
+      <h2>Deine Parameter</h2>
+      <div class="inputs-grid">
+
+        <!-- Anfragen pro Tag -->
+        <div class="input-group">
+          <label for="slider-anfragen">Anfragen pro Tag</label>
+          <div class="input-row">
+            <input
+              type="range"
+              id="slider-anfragen"
+              min="1"
+              max="200"
+              value="20"
+              aria-label="Anfragen pro Tag"
+            />
+            <input
+              type="number"
+              id="num-anfragen"
+              min="1"
+              max="200"
+              value="20"
+              aria-label="Anfragen pro Tag (Zahl)"
+            />
+          </div>
+        </div>
+
+        <!-- Woerter pro Anfrage -->
+        <div class="input-group">
+          <label for="slider-woerter-anfrage">W&ouml;rter pro Anfrage</label>
+          <div class="input-row">
+            <input
+              type="range"
+              id="slider-woerter-anfrage"
+              min="10"
+              max="2000"
+              value="200"
+              aria-label="Woerter pro Anfrage"
+            />
+            <input
+              type="number"
+              id="num-woerter-anfrage"
+              min="10"
+              max="2000"
+              value="200"
+              aria-label="Woerter pro Anfrage (Zahl)"
+            />
+          </div>
+        </div>
+
+        <!-- Woerter pro Antwort -->
+        <div class="input-group">
+          <label for="slider-woerter-antwort">W&ouml;rter pro Antwort</label>
+          <div class="input-row">
+            <input
+              type="range"
+              id="slider-woerter-antwort"
+              min="10"
+              max="2000"
+              value="300"
+              aria-label="Woerter pro Antwort"
+            />
+            <input
+              type="number"
+              id="num-woerter-antwort"
+              min="10"
+              max="2000"
+              value="300"
+              aria-label="Woerter pro Antwort (Zahl)"
+            />
+          </div>
+        </div>
+
+      </div><!-- /.inputs-grid -->
+    </div><!-- /.inputs-card -->
+
+    <!-- Ergebnistabelle -->
+    <div class="results-section">
+      <h2>Kostenvergleich</h2>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th class="col-modell">Modell</th>
+              <th class="col-anbieter">Anbieter</th>
+              <th>Kosten&nbsp;/&nbsp;Tag</th>
+              <th>Kosten&nbsp;/&nbsp;Monat</th>
+              <th>Kosten&nbsp;/&nbsp;Jahr</th>
+              <th class="col-kontext">Kontext</th>
+              <th class="col-staerken">St&auml;rken</th>
+            </tr>
+          </thead>
+          <tbody id="ergebnis-tbody">
+            <tr>
+              <td colspan="7" class="state-msg">Lade Modelldaten&hellip;</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div><!-- /.results-section -->
+
+  </main>
+
+  <!-- ── FOOTER ────────────────────────────────────────────────────── -->
+  <footer>
+    <p>Preise ohne Gew&auml;hr, Stand: M&auml;rz 2025</p>
+    <a
+      class="btn-report"
+      href="https://github.com/Jonas-Keil/ki-kostenrechner/issues/new"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      &#9881; Preise melden&nbsp;/&nbsp;korrigieren
+    </a>
+  </footer>
+
+  <script src="rechner.js"></script>
+</body>
+</html>

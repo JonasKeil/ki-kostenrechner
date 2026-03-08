@@ -1,0 +1,56 @@
+[
+  {
+    "name": "GPT-4o",
+    "anbieter": "OpenAI",
+    "input_pro_1m_token": 2.50,
+    "output_pro_1m_token": 10.00,
+    "kontext_fenster": "128k",
+    "staerken": "Vielseitig, Bild-Analyse",
+    "stand": "2025-03"
+  },
+  {
+    "name": "GPT-4o mini",
+    "anbieter": "OpenAI",
+    "input_pro_1m_token": 0.15,
+    "output_pro_1m_token": 0.60,
+    "kontext_fenster": "128k",
+    "staerken": "Schnell & günstig",
+    "stand": "2025-03"
+  },
+  {
+    "name": "Claude Sonnet 4.6",
+    "anbieter": "Anthropic",
+    "input_pro_1m_token": 3.00,
+    "output_pro_1m_token": 15.00,
+    "kontext_fenster": "1M",
+    "staerken": "Lange Dokumente, Coding",
+    "stand": "2025-03"
+  },
+  {
+    "name": "Claude Haiku 4.5",
+    "anbieter": "Anthropic",
+    "input_pro_1m_token": 0.80,
+    "output_pro_1m_token": 4.00,
+    "kontext_fenster": "200k",
+    "staerken": "Schnell, kostengünstig",
+    "stand": "2025-03"
+  },
+  {
+    "name": "Gemini 1.5 Pro",
+    "anbieter": "Google",
+    "input_pro_1m_token": 1.25,
+    "output_pro_1m_token": 5.00,
+    "kontext_fenster": "2M",
+    "staerken": "Riesiger Kontext, Multimodal",
+    "stand": "2025-03"
+  },
+  {
+    "name": "Gemini 1.5 Flash",
+    "anbieter": "Google",
+    "input_pro_1m_token": 0.075,
+    "output_pro_1m_token": 0.30,
+    "kontext_fenster": "1M",
+    "staerken": "Sehr günstig, schnell",
+    "stand": "2025-03"
+  }
+]
