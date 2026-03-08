@@ -10,22 +10,31 @@
 // ── Inline-Fallback: wird genutzt wenn fetch() auf file:// scheitert ──────────
 const FALLBACK_MODELLE = [
   {
-    name: "GPT-4o",
+    name: "GPT-5.4",
     anbieter: "OpenAI",
     input_pro_1m_token: 2.50,
-    output_pro_1m_token: 10.00,
-    kontext_fenster: "128k",
-    staerken: "Vielseitig, Bild-Analyse",
-    stand: "2025-03"
+    output_pro_1m_token: 20.00,
+    kontext_fenster: "1M",
+    staerken: "Deep-Horizon Reasoning, Multimodal",
+    stand: "2026-03"
   },
   {
-    name: "GPT-4o mini",
+    name: "GPT-5",
     anbieter: "OpenAI",
-    input_pro_1m_token: 0.15,
-    output_pro_1m_token: 0.60,
-    kontext_fenster: "128k",
-    staerken: "Schnell & guenstig",
-    stand: "2025-03"
+    input_pro_1m_token: 1.25,
+    output_pro_1m_token: 10.00,
+    kontext_fenster: "400k",
+    staerken: "Vielseitig, starke Basisleistung",
+    stand: "2026-03"
+  },
+  {
+    name: "Claude Opus 4.6",
+    anbieter: "Anthropic",
+    input_pro_1m_token: 5.00,
+    output_pro_1m_token: 25.00,
+    kontext_fenster: "1M",
+    staerken: "Agent-Teams, Adaptive Thinking",
+    stand: "2026-03"
   },
   {
     name: "Claude Sonnet 4.6",
@@ -33,35 +42,26 @@ const FALLBACK_MODELLE = [
     input_pro_1m_token: 3.00,
     output_pro_1m_token: 15.00,
     kontext_fenster: "1M",
-    staerken: "Lange Dokumente, Coding",
-    stand: "2025-03"
+    staerken: "Coding, lange Dokumente",
+    stand: "2026-03"
   },
   {
-    name: "Claude Haiku 4.5",
-    anbieter: "Anthropic",
-    input_pro_1m_token: 0.80,
-    output_pro_1m_token: 4.00,
+    name: "Gemini 3.1 Pro",
+    anbieter: "Google",
+    input_pro_1m_token: 2.00,
+    output_pro_1m_token: 12.00,
     kontext_fenster: "200k",
-    staerken: "Schnell, kostenguenstig",
-    stand: "2025-03"
+    staerken: "Video & Audio nativ, Multimodal",
+    stand: "2026-03"
   },
   {
-    name: "Gemini 1.5 Pro",
+    name: "Gemini 2.5 Flash",
     anbieter: "Google",
-    input_pro_1m_token: 1.25,
-    output_pro_1m_token: 5.00,
-    kontext_fenster: "2M",
-    staerken: "Riesiger Kontext, Multimodal",
-    stand: "2025-03"
-  },
-  {
-    name: "Gemini 1.5 Flash",
-    anbieter: "Google",
-    input_pro_1m_token: 0.075,
-    output_pro_1m_token: 0.30,
+    input_pro_1m_token: 0.15,
+    output_pro_1m_token: 0.60,
     kontext_fenster: "1M",
-    staerken: "Sehr guenstig, schnell",
-    stand: "2025-03"
+    staerken: "Bestes Preis-Leistungs-Verhältnis",
+    stand: "2026-03"
   }
 ];
 
