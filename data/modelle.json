@@ -56,7 +56,7 @@
     "output_pro_1m_token": 5.00,
     "kontext_fenster": "200k",
     "staerken": "Schnell, hohe Anfragevolumen",
-    "intelligence_score": null,
+    "intelligence_score": 37,
     "stand": "2026-03"
   },
   {
@@ -76,7 +76,7 @@
     "output_pro_1m_token": 1.50,
     "kontext_fenster": "1M",
     "staerken": "2,5× schneller als Flash, günstigste Option",
-    "intelligence_score": null,
+    "intelligence_score": 34,
     "stand": "2026-03"
   }
 ]
